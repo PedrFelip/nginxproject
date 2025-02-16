@@ -4,8 +4,52 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Server Nginx </title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            background-color: #f0f0f0;
+        }
+        .message {
+            font-size: 2em;
+            color: #333;
+            opacity: 0;
+            transform: translateY(-10px);
+            animation: fadeIn 1s forwards;
+        }
+
+        @keyframes fadeIn {
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+    </style>
 </head>
 <body>
-    <h1>Static website</h1>
+    <div class="message" id="greeting"></div>
+
+    <script>
+        function hora() {
+            const horario = new Date().getHours();
+            let mensagem;
+
+            if (horario >= 5 && horario < 12) {
+                mensagem = "Bom dia!";
+            } else if (horario >= 12 && horario < 18) {
+                mensagem = "Boa tarde!";
+            } else {
+                mensagem = "Boa noite!";
+            }
+
+            return mensagem;
+        }
+
+        document.getElementById('greeting').textContent = hora();
+    </script>
 </body>
 </html>
