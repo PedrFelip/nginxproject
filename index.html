@@ -8,6 +8,7 @@
         body {
             font-family: Arial, sans-serif;
             display: flex;
+            flex-direction: column;
             justify-content: center;
             align-items: center;
             height: 100vh;
@@ -19,7 +20,15 @@
             color: #333;
             opacity: 0;
             transform: translateY(-10px);
-            animation: fadeIn 1s forwards;
+            animation: fadeIn 2s forwards;
+        }
+        
+        .server-message {
+            font-size: 1.2em;
+            color: #666;
+            margin-top: 20px;
+            opacity: 0;
+            animation: fadeIn 2s forwards 1s; 
         }
 
         @keyframes fadeIn {
@@ -32,6 +41,7 @@
 </head>
 <body>
     <div class="message" id="greeting"></div>
+    <div class="server-message">Server Nginx funcionou!</div>
 
     <script>
         function hora() {
